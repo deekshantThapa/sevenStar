@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Lexend Deca';
+    src: url('../fonts/LexendDeca-Bold.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.site-title {
+    background-image: url('../images/experts-bg.jpg'); /* Replace with your actual image path */
+    background-size: cover; /* Optional: covers the whole area */
+    background-position: center; /* Optional: centers the image */
+    background-repeat: no-repeat; /* Optional: prevents tiling */
+    font-family: 'Lexend Deca', sans-serif;
+}

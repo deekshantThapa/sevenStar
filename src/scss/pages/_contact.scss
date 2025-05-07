@@ -1,0 +1,102 @@
+.sit-contactform {
+    padding-block-end: 128px;
+
+    @include breakpoint (medium) {
+        padding-block-end: 80px;
+    }
+
+    @include breakpoint (small) {
+        padding-block-end: 80px;
+    }
+
+    &__row {
+        @include flex (false, false, wrap, row);
+        margin: 0 -15px;
+        gap: 40px 0;
+
+        >* {
+            padding: 0 15px;
+
+            @include breakpoint (medium, true) {
+                flex: 0 1 50%;
+            }
+        }
+    }
+
+    &__info {
+        &-inner {
+            @include breakpoint (medium, true) {
+                max-width: 529px;
+            }
+        }
+
+        p{
+            color: $color__gray-700;
+            margin: 0 0 24px;
+
+            &:nth-last-of-type(1){
+                margin: 0;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 48px;
+
+            @include breakpoint (medium) {
+                margin-top: 32px;
+            }
+
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    text-decoration: none;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    .info-icon {
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+
+                        svg {
+                            path {
+                                transition: 0.4s stroke;
+                            }
+                        }
+                    }
+
+                    .info-text {
+                        color: $color__gray-700;
+                        transition: 0.4s color;
+                    }
+
+                    &:hover {
+                        .info-text {
+                            color: $color__primary;
+                        }
+
+                        .info-icon {
+                            svg {
+                                path {
+                                    stroke: $color__primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__block{
+
+        &-inner{
+            padding-left: 2px;
+        }
+    }
+}

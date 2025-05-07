@@ -1,0 +1,43 @@
+// --------------------------- Fonts
+$font__primary: "Lexend Deca", sans-serif;
+$font__secondary: "Lexend Deca", sans-serif;
+$font__tertiary: "Lexend Deca", sans-serif;
+
+// --------------------------- Theme Colors
+$color__primary: #4BA6F9;
+$color__brand-bg: #030303;
+$color__secondary: #222121;
+$color__gray-900: #323232;
+$color__gray-800: #8C8C8C;
+$color__gray-700: #D1D1D1;
+$color__gray-600: #DDDDDD;
+$color__gray-500: #E8E8E8;
+$color__gray-400: #F3F3F3;
+$color__gray-300: #F9F9F9;
+$color__graywhite: #FFFFFF4D;
+
+// --------------------------- Other Colors
+$color__success: #21D184;
+$color__warning: #ffc107;
+$color__danger: #FF5C5C;
+$color__link: #3870FF;
+$color__black: #000000;
+$color__white: #fff;
+
+// --------------------------- Breakpoints
+$breakpoints: (
+	"xxs": 320px,
+	"iPhone5": 374px,
+	"extraSmall": 467px,
+	"smaller": 575px,
+	"small": 767px,
+	"medium": 991px,
+	"ipadPro": 1024px,
+	"wide": 1199px,
+	"laptop": 1399px,
+	"extraWide": 1930px,
+);
+
+// --------------------------- Container
+$container-width: 1342px;
+$container-padding: 15px;

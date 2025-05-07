@@ -1,0 +1,262 @@
+.sit-contactcta,
+.sit-subscription {
+    padding-block: 128px;
+
+    @include breakpoint (medium) {
+        padding-block: 80px;
+    }
+
+    @include breakpoint (small) {
+        padding-block: 60px;
+    }
+
+    &__row {
+        @include flex (space-between, false, wrap, row);
+        gap: 24px 0;
+    }
+
+    &__title {
+        flex: 0 1 25.6%;
+
+        @include breakpoint (small) {
+            flex: 0 1 100%;
+        }
+
+        h6 {
+            padding-top: 12px;
+        }
+    }
+
+    &__contents {
+        flex: 0 1 74.4%;
+
+        @include breakpoint (small) {
+            flex: 0 1 100%;
+        }
+
+        &-inner{
+            h3, >p {
+                line-height: 1.3;
+                margin: 0 0 32px;
+                font-weight: 600;
+                font-size: var(--40px);
+                color: $color__white;
+    
+                @include breakpoint (medium){
+                    font-size: var(--36px);
+                }
+    
+                @include breakpoint (small){
+                    font-size: var(--32px);
+                }
+    
+                &:has(+ .sit-btn) {
+                    margin: 0 0 40px;
+                }
+    
+                span {
+                    // color: $color__gray-900;
+                    p{
+                        display: inline;
+                        color: inherit;
+                    }
+                }
+            }
+        }
+
+
+        .split-item{
+            display: block;
+            position: relative;
+        }
+
+        .mask{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--_bg-color);
+            opacity: 0.88; 
+            transform-origin: 100% 50%;
+            will-change: transform;
+        }
+    }
+
+    &__cta{
+        @include flex(space-between, center, wrap, row);
+        gap: 24px 40px;
+        padding-right: 47px;
+        @include breakpoint (medium){
+            padding-right: 0;
+        }
+
+        >*{
+            @include breakpoint (small){
+                width: 100%;
+            }
+        }
+
+        .sit-btn{
+            width: 336px;
+            max-width: 100%;
+            justify-content: space-between;
+
+            @include breakpoint (medium){
+                width: 310px;
+            }
+
+            @include breakpoint (iPhone5){
+                width: 100%;
+            }
+        }
+    }
+
+    &__amount{
+        h3{
+            margin: 0;
+
+            span{
+                color: $color__white;
+                font-size: var(--20px);
+                @include breakpoint (medium){
+                    font-size: var(--18px);
+                }
+            }
+        }
+    }
+
+    .two-col-content {
+        --_row-gap: 144px;
+        @include flex(space-between, false, wrap, row);
+        gap: 20px var(--_row-gap);
+
+        @include breakpoint (wide) {
+            --_row-gap: 60px;
+        }
+
+        @include breakpoint (medium) {
+            --_row-gap: 40px;
+        }
+
+        &:has(+.sit-btn) {
+            margin: 0 0 40px;
+        }
+
+        >* {
+            flex: 0 1 calc(50% - (var(--_row-gap) / 2));
+
+            @include breakpoint (smaller) {
+                flex: 0 1 100%;
+            }
+        }
+
+        p {
+            color: $color__gray-500 ;
+        }
+    }
+}
+
+.sit-contactcta{
+    &__title{
+        h6{
+            .single-offers & {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &__contents {
+
+        h3 {
+            .single-offers & {
+                @include breakpoint (medium, true){
+                    margin: 0 0 39px;
+                }
+            }
+        }
+    }
+}
+
+.sit-subscription{
+    &__title{
+        h6{
+            padding-top: 0;
+        }
+    }
+    &__contents{
+        ul {
+            margin: 48px 0;
+            padding: 0 47px 0 0;
+    
+            @include breakpoint (medium){
+                padding-right: 0;
+            }
+    
+            li {
+                color: $color__gray-700;
+                font-size: var(--20px);
+                line-height: 1.3;
+                font-weight: 600;
+                padding: 24px 33px;
+                list-style: none;
+                position: relative;
+                border-radius: 8px;
+                background-color: $color__gray-900;
+                display: flex;
+                gap: 16px;
+    
+                @include breakpoint (medium){
+                    font-size: var(--18px);
+                    padding: 18px 20px;
+                    gap: 10px;
+                }
+
+                &::before{
+                    content: none;
+                    width: 16px;
+                    height: 16px;
+                    background-image: url(../images/check-icon.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    display: inline-block;
+                    margin-right: 16px;
+                    position: relative;
+                    top: 8px;
+                    flex: 0 0 16px;
+                }
+    
+                &:not(:last-child){
+                    margin-bottom: 14px;
+                }
+
+                .list-icon {
+                    flex: 0 0 16px;
+                    width: 16px;
+                    height: 16px;
+                    display: inline-flex;
+                    background: $color__white;
+                    border-radius: 50%;
+                    -webkit-mask-image: -webkit-radial-gradient(white, black);
+                    position: relative;
+                    top: 6px;
+
+                    img,
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                .list-text {
+                    font-size: inherit;
+                    font-weight: inherit;
+                    color: inherit;
+                }
+    
+            }
+        }
+
+    }
+}

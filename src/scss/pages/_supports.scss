@@ -1,0 +1,138 @@
+.sit-teamviewer {
+    &__holder {
+        @include flex(center, center, wrap, row);
+        margin: 0 -11px;
+        gap: 40px 0;
+
+        >* {
+            padding: 0 11px;
+        }
+    }
+
+    &__float-graphics {
+        flex: 0 1 22.69%;
+        min-height: 484px;
+        position: relative;
+        --_img-size: 104px;
+
+        @include breakpoint (medium, true) {
+            --_right-pos: 24px;
+            --_left-pos: 32px;
+            --_top-pos: 36px;
+        }
+
+        @include breakpoint (wide) {
+            --_img-size: 80px;
+            min-height: unset;
+        }
+
+        @include breakpoint (medium) {
+            display: flex;
+            flex: 0 1 100%;
+            @include flex-center();
+            padding-left: 39px;
+
+            @for $i from 2 to 5 {				
+                img {
+                    &:nth-child(#{$i}) {				
+                        transform: translateX(calc(-8px * $i));
+                    }
+                }
+            }
+        }
+
+        @include breakpoint (extraSmall) {
+            --_img-size: 60px
+        }
+
+        img {
+            position: relative;
+            width: var(--_img-size);
+            height: var(--_img-size);
+            border-radius: 50px;
+            display: block;
+
+            &:nth-child(2) {
+                @include breakpoint (medium, true) {
+                    top: calc(var(--_top-pos) * -1);
+                }
+            }
+
+            &:nth-child(3) {
+                @include breakpoint (medium, true) {
+                    top: calc(var(--_top-pos) * 2);
+                    width: calc(var(--_img-size) - 8px);
+                    height: calc(var(--_img-size) - 8px);
+                    margin-bottom: 76px;
+                }
+            }
+
+        }
+
+        &.left--graphics {
+            img {
+
+                &:first-child,
+                &:last-child {
+                    @include breakpoint (medium, true) {
+                        margin-left: auto;
+                    }
+                }
+
+                &:first-child {
+                    @include breakpoint (medium, true) {
+                        right: var(--_right-pos);
+                    }
+                }
+
+                &:nth-child(3) {
+                    @include breakpoint (medium, true) {
+                        left: var(--_left-pos);
+                    }
+                }
+            }
+        }
+
+        &.right--graphics {
+            img {
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    @include breakpoint (medium, true) {
+                        margin-left: auto;
+                    }
+                }
+
+                &:first-child {
+                    @include breakpoint (medium, true) {
+                        left: var(--_right-pos);
+                    }
+                }
+
+                &:nth-child(3) {
+                    @include breakpoint (medium, true) {
+                        right: var(--_left-pos);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    &__overview {
+        flex: 0 1 54.62%;
+
+        @include breakpoint (medium) {
+            flex: 0 1 100%;
+        }
+
+        h2 {
+            margin: 0 0 24px;
+        }
+
+        .sit-btn {
+            margin-top: 48px;
+        }
+    }
+}

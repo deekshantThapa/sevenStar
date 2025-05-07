@@ -1,0 +1,148 @@
+// ------------------------------------- Site Base
+input,
+select,
+textarea {
+	width: 100%;
+	display: block;
+	border: 1px solid $color__gray-700;
+	border-radius: 8px;
+	padding: 15px 24px;
+	background-color: transparent;
+	font-size: inherit;
+	line-height: 1.5;
+	margin-top: 16px;
+	font-family: $font__primary;
+	color: $color__gray-700;
+	outline: 0;
+
+	@include breakpoint (medium){
+		margin-top: 10px;
+	}
+}
+
+input,
+textarea {
+	&::placeholder {
+		color: $color__gray-800;
+		opacity: 0.99; // Fix for firefox
+	}
+}
+
+textarea{
+	min-height: 147px;
+	max-height: 147px;
+}
+
+select {
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: url(../images/dropdown-icon.svg);
+	background-position: 99.5% center;
+	background-size: 38px;
+	padding-right: 36px;
+	background-repeat: no-repeat;
+}
+
+option{
+	color: #323232;
+}
+
+textarea {
+	resize: none;
+	height: 150px;
+	vertical-align: top;
+}
+
+input[type="submit"],
+input[type="reset"],
+button[type="reset"] {
+	cursor: pointer;
+	display: inline-block;
+}
+
+button[type="submit"]{
+	border: 0;
+	margin-top: 8px;
+}
+
+label{
+	display: block;
+	margin-bottom: 32px;
+	width: 100%;
+
+	@include breakpoint (medium){
+		margin-bottom: 24px;
+	}
+}
+
+.half-col{
+	width: calc(50% - 24.5px);
+
+	@include breakpoint (medium){
+		width: calc(50% - 12px);
+	}
+
+	@include breakpoint (smaller){
+		width: 100%;
+	}
+}
+
+/**
+* Override for CF7
+*/
+.wpcf7 {
+	.wpcf7-form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0px 49px;
+
+		@include breakpoint (medium){
+			gap: 0 24px;
+		}
+		.wpcf7-response-output {
+			margin-inline: 0;
+			width: 100%;
+		}
+
+		.wpcf7-not-valid-tip{
+			font-size: var(--16px);
+		}
+
+		.wpcf7-form-control-wrap{
+			display: block;
+		}
+	}
+}
+
+/**
+* Override for Gravity Forms
+*/
+.gform_wrapper.gravity-theme {
+	.gform_heading {
+		.gform_description {
+		}
+		.gform_required_legend {
+		}
+	}
+
+	form {
+		.gform_body {
+			.gform_fields {
+				.gfield {
+					.gfield_label {
+						.gfield-required {
+						}
+					}
+					.ginput_container {
+						input {
+						}
+						select {
+						}
+						textarea {
+						}
+					}
+				}
+			}
+		}
+	}
+}

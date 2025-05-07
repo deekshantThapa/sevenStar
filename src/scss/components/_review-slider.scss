@@ -1,0 +1,162 @@
+.sit-customerreview {
+    .ti-widget {
+        max-width: 1342px;
+        margin-inline: auto;
+
+        &.ti-goog {
+            .ti-widget-container {
+                .ti-review-item {
+                    padding: 0 16px;
+
+                    @include breakpoint (wide, true) {
+                        flex: 0 0 33.33%;
+                        max-width: 33.33%;
+                    }
+
+                    @include breakpoint (laptop) {
+                        padding: 0 10px;
+                    }
+
+                    >.ti-inner {
+                        padding: 32px !important;
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .ti-review-header {
+                order: 5;
+                position: static;
+
+                &::after {
+                    top: 32px;
+                    right: 32px;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            .ti-review-content {
+                font-size: var(--16px);
+                line-height: 1.5;
+                margin: 0 0 31px;
+                -webkit-line-clamp: 6;
+                height: auto !important;
+                flex-grow: 1;
+            }
+
+            .ti-profile-img {
+                margin-right: 16px !important;
+
+                img {
+                    width: 56px !important;
+                    height: 56px !important;
+                }
+            }
+
+            .ti-reviews-container {
+                padding-bottom: 80px;
+            }
+
+            .ti-reviews-container-wrapper {
+                margin: 0 !important;
+                padding-top: 0 !important;
+
+                .ti-inner {
+                    >.ti-stars {
+                        margin-top: 6px;
+                        margin-bottom: 26px;
+                        padding-right: 38px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                    }
+                }
+            }
+
+            .ti-controls {
+                height: auto !important;
+                margin: 0 !important;
+                top: unset !important;
+                bottom: 0;
+                width: auto;
+                right: 0;
+                display: flex;
+                flex-direction: row-reverse;
+                gap: 16px;
+                padding-right: 16px;
+
+                >* {
+                    /* 	display: block !important; */
+                    position: relative !important;
+                    flex: 0 1 48px;
+                    width: 48px !important;
+                    border: 1px solid #8C8C8C !important;
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    height: 48px !important;
+                    transform: scale(1) !important;
+
+                    &:after {
+                        top: 50% !important;
+                        transform: translate(-50%, -50%) !important;
+                        background: $color__white !important;
+                        transition: 0.3s all;
+                    }
+
+                    &:before {
+                        position: static !important;
+                        background: inherit !important;
+                        top: 0% !important;
+                        left: 0% !important;
+                        width: 12px !important;
+                        height: 12px !important;
+                        border-right: 3px solid $color__white;
+                        border-bottom: 3px solid $color__white;
+                        transform: rotate(135deg) !important;
+                        transition: 0.4s all;
+                    }
+
+                    &.ti-prev{
+                        &::after {
+                            left: 54% !important;
+                        }
+                    }
+
+                    &.ti-next{
+                        &::after {
+                            left: 47% !important;
+                        }
+
+                        &:before {
+                            transform: rotate(-45deg) !important;
+                        }
+                    }
+
+                    &:hover {
+                        border-color: $color__primary !important;
+
+                        &::before {
+                            border-color: $color__primary !important;
+                        }
+
+                        &::after {
+                            background-color: $color__primary !important;
+                        }
+                    }
+                }
+            }
+
+            &.ti-text-align-justify {
+                .ti-review-content {
+                    text-align: left !important;
+                }
+            }
+        }
+    }
+}

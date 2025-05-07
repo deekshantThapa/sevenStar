@@ -1,0 +1,31 @@
+@for $i from 1 through 9 {
+	.section-#{$i} {
+		height: 500px;
+		background: rgba(255, 0, 0, calc(#{$i} / 10));
+		.container {
+			height: 100%;
+			position: relative;
+			max-width: 500px;
+			margin: 0 auto;
+		}
+		.content-wrapper {
+			height: 100%;
+			@include flex-center();
+		}
+	}
+}
+
+ul.test {
+	li {
+		border: 1px solid #000;
+		margin: 0 0 15px;
+	}
+}
+
+.image-wrapper {
+	position: relative;
+	img {
+		max-width: 100%;
+		width: 100%;
+	}
+}

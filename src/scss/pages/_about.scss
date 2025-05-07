@@ -1,0 +1,155 @@
+.sit-experts {
+    padding-block: 128px;
+
+    @include breakpoint (medium) {
+        padding-block: 80px;
+    }
+
+    @include breakpoint (small) {
+        padding-block: 80px;
+    }
+
+    &__row {
+        @include flex(false, false, wrap, row);
+        gap: 32px 0;
+        margin: 0 -15px;
+
+        @include breakpoint (laptop, true) {
+            margin: 0 -16px;
+        }
+    }
+
+    &__col {
+        padding: 0 15px;
+        flex: 0 1 25%;
+
+        @include breakpoint (laptop, true) {
+            padding: 0 16px;
+        }
+
+        @include breakpoint (medium) {
+            flex: 0 1 33.33%;
+        }
+
+        @include breakpoint (small) {
+            flex: 0 1 50%;
+        }
+
+        @include breakpoint (extraSmall) {
+            flex: 0 1 100%;
+        }
+    }
+
+    .experts-card {
+        overflow: hidden;
+        border-radius: 8px;
+
+        &__thumb {
+            border-radius: 8px;
+            position: relative;
+            isolation: isolate;
+            line-height: 0;
+            overflow: hidden;
+            @include flex (center, flex-end, wrap, row);
+            transition: transform 0.4s ease;
+            overflow: hidden;
+            will-change: transform;
+            aspect-ratio: 0.85 / 1;
+
+            // filter: blur(3px);
+            // -webkit-filter: blur(3px);
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-image: url(../images/experts-bg.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-blend-mode: multiply;
+                background-color: rgba($color__primary, 0.4);
+                top: 0;
+                left: 0;
+                filter: blur(3px);
+                border-radius: inherit;
+                will-change: transform;
+                -webkit-mask-image: -webkit-radial-gradient(white, black);
+            }
+
+            img {
+                z-index: 3;
+                padding: 15px 15px 0 15px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+                &.hover-image{
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.03);
+
+                img{
+                    &.current-image{
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    &.hover-image{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+
+        &__details {
+            padding-top: 24px;
+
+            .experts-name {
+                margin: 0 0 4px;
+                font-size: var(--20px);
+                line-height: 1.3;
+            }
+
+            .experts-designation {
+                font-size: var(--16px);
+                margin: 0 0 12px;
+                line-height: 1.5;
+                font-weight: 400;
+            }
+
+            .social-media {
+                @include flex (false, center, wrap, row);
+                gap: 16px;
+
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    width: 24px;
+                    height: 24px;
+                    justify-content: center;
+
+                    svg {
+                        path {
+                            transition: 0.4s ease-in-out;
+                        }
+                    }
+
+                    &:hover {
+                        svg {
+                            path {
+                                stroke: $color__primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

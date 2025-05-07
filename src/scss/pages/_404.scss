@@ -1,0 +1,51 @@
+.not-found{
+    position: relative;
+    background-color: $color__secondary;
+
+    &__wrapper{
+        @include flex(center, center, wrap, row);
+        padding-block-start: 195px;
+        position: relative;
+        z-index: 1;
+        min-height: 741px;
+        padding-block-end: 104px;
+
+        @include breakpoint (medium){
+            min-height: 620px;
+            padding-block-start: 145px;
+            padding-block-end: 80px;
+        }
+
+        @include breakpoint (smaller){
+            min-height: unset;
+        }
+
+        .content-inner{
+            text-align: center;
+            h2{
+                color: $color__primary;
+                font-size: 256px;
+                line-height: 1;
+                margin-bottom: 24px;
+
+                @include breakpoint (medium){
+                    font-size: 176px;
+                }
+
+                @include breakpoint (small){
+                    font-size: 115px;
+                }
+            }
+
+            p{
+                color: $color__gray-500;
+                max-width: 476px;
+                margin: 0 auto;
+            }
+
+            .btn-wrap{
+                padding-top: 41px;
+            }
+        }
+    }
+}
